@@ -7,7 +7,7 @@
 #define MAX 9
 
 unsigned int grille[MAX][MAX];
-void Niveau(int niveau);
+void Level(int level);
 void affiche_grille(int iIndex,int jIndex);
 int saisie_grille(void);
 void saisie_case();
@@ -18,12 +18,12 @@ bool checkCol(int value, int index);
 bool checkSub(int value, int rowIndex, int colIndex);
 
 int main(void) {
-  int niveau;
+  int level;
   char  c;
   printf("**********************  SUDOKU ************************\n");
   printf("choisir niveau :");
-  scanf("%d",&niveau);
-  Niveau(niveau);
+  scanf("%d",&level);
+  Lvel(level);
   while(true){
   printf("--------------------- Niveau %d ----------------------\n",niveau);
           affiche_grille(-1,-1); 
@@ -35,7 +35,7 @@ int main(void) {
      
     c = fgetc(stdin);
     if(c=='c' || c=='C')
-        niveau=niveau+1;
+        level=level+1;
     if (c=='q'|| c=='Q')
         break;
   }
@@ -43,11 +43,11 @@ int main(void) {
 
 
 }
-void  Niveau(int niveau){ 
+void  Level(int level){ 
 	int i,j;
 	FILE * source;
   printf("\n");
-	source = fopen("Niveau0","r");
+	source = fopen("level1","r");
 	for (i = 0; i <MAX; i++)
 	{
 		for(j= 0; j <MAX; j++)
